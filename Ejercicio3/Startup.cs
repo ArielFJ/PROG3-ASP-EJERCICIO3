@@ -50,7 +50,7 @@ namespace Ejercicio3
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Home}/{action=Lista}/{id?}");
             });
         }
     }
