@@ -25,6 +25,11 @@ namespace Ejercicio3.Controllers
             return View(_dealer);
         }
 
+        public IActionResult Formulario()
+        {
+            return View();
+        }
+
         [HttpPost]
         public IActionResult Formulario(Carro carro)
         {
@@ -36,11 +41,6 @@ namespace Ejercicio3.Controllers
                 return View("Lista", _dealer);
             }
             return View(carro);
-        }
-
-        public IActionResult Formulario()
-        {
-            return View();
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
