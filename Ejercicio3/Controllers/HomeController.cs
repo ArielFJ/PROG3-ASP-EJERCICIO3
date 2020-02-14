@@ -12,20 +12,17 @@ namespace Ejercicio3.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly DealerViewModel _dealer;
 
         public HomeController(ILogger<HomeController> logger)
         {
+            _dealer = new DealerViewModel();
             _logger = logger;
         }
 
-        public IActionResult Index()
+        public IActionResult Lista()
         {
-            return View();
-        }
-
-        public IActionResult Privacy()
-        {
-            return View();
+            return View(_dealer);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
