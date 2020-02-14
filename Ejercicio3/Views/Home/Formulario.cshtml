@@ -1,5 +1,54 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@model Carro
+
+<h1 class="display-4 text-center">MagnaDealer</h1>
+
+<h3 class="text-info mt-4">Llene el formulario y pulse Guardar para agregar nuevo vehículo.</h3>
+
+<form asp-controller="Home" asp-action="Formulario" method="post" class="mt-4">
+
+    <div class="text-center row">
+
+        <div class="form-group">
+            <div class="col-md-12">
+                <label asp-for="Marca" class="control-label"></label>
+                <input asp-for="Marca" class="form-control" />
+                <span asp-validation-for="Marca" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-12">
+                <label asp-for="Nombre" class="control-label"></label>
+                <input asp-for="Nombre" class="form-control" value="" />
+                <span asp-validation-for="Nombre" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-12">
+                <label asp-for="Color" class="control-label"></label>
+                <select asp-for="Color" asp-items="Html.GetEnumSelectList<ConsoleColor>()" class="custom-select"></select>
+                <span asp-validation-for="Color" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-12">
+                <label asp-for="Chasis" class="control-label"></label>
+                <input asp-for="Chasis" class="form-control" value="" />
+                <span asp-validation-for="Chasis" class="text-danger"></span>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <div class="col-md-5">
+                <button type="submit" class="btn btn-success mt-4">Guardar</button>
+            </div>
+        </div>
+
+    </div>
+
+    <a class="btn btn-primary mt-4" asp-controller="Home" asp-action="Lista">Volver</a><br />
+
+</form>
